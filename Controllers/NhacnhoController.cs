@@ -6,9 +6,11 @@ using System.Web.Mvc;
 
 namespace EquipmentManager.Controllers
 {
+    [Authorize]
     public class NhacnhoController : Controller
     {
         // GET: Nhacnho
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();

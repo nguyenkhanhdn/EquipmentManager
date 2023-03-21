@@ -10,7 +10,8 @@ namespace EquipmentManager.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("index","admin");
+            //return View();
         }
 
         public ActionResult About()

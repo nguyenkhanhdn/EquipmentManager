@@ -10,11 +10,13 @@ using EquipmentManager.Models;
 
 namespace EquipmentManager.Controllers
 {
+    [Authorize]
     public class PhongbansController : Controller
     {
         private EquipmentDbContext db = new EquipmentDbContext();
 
         // GET: Phongbans
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Phongbans.ToList());
