@@ -1,0 +1,43 @@
+﻿@model EquipmentManager.Models.Phongban
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Phongban</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenphong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenphong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phutrach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phutrach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dienthoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dienthoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

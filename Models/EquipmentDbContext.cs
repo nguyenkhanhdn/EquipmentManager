@@ -11,8 +11,11 @@ namespace EquipmentManager.Models
         public EquipmentDbContext() : base("name=DefaultConnection")
         {
         }
-        public DbSet<Equipment> Equipments { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Department> Departments { get; set; }
+
+        public DbSet<Thietbi> Thietbis { get; set; }
+        public DbSet<Nhanvien> Nhanviens { get; set; }
+        public DbSet<Phongban> Phongbans { get; set; }
+        public DbSet<Kehoachbaoduong> Kehoachbaoduongs { get; set; }
+        public DbSet<Baoduong> Baoduongs { get; set; }
     }
 }

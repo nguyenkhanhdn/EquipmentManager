@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EquipmentManager.Models.Thietbi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH THIẾT BỊ</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-responsive table-hover" id="thietbi">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenthietbi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgaySX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NhaSX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Handung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ngaymua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DVT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soluong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tinhtrang)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tenthietbi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhaSX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Handung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaymua)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DVT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tinhtrang)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#thietbi').DataTable();
+        });
+    </script>
+}

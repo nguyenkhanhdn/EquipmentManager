@@ -1,0 +1,83 @@
+﻿@model EquipmentManager.Models.Thietbi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Thietbi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenthietbi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenthietbi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhaSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaSX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Handung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Handung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaymua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaymua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tinhtrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tinhtrang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
