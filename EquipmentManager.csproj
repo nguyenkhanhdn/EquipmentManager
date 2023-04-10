@@ -181,6 +181,10 @@
     <Compile Include="Migrations\202303210049585_mot.Designer.cs">
       <DependentUpon>202303210049585_mot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304101300018_nam.cs" />
+    <Compile Include="Migrations\202304101300018_nam.Designer.cs">
+      <DependentUpon>202304101300018_nam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Baoduong.cs" />
     <Compile Include="Models\Kehoachbaoduong.cs" />
@@ -200,6 +204,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EquipManager.mdf" />
+    <Content Include="App_Data\EquipManager_log.ldf">
+      <DependentUpon>EquipManager.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\css\style.css" />
     <Content Include="assets\images\tools.png" />
     <Content Include="assets\img\alarmfire.png" />
@@ -416,9 +424,7 @@
     <Content Include="Views\Baoduongs\Index.cshtml" />
     <Content Include="Views\Nhacnho\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -438,6 +444,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303210049585_mot.resx">
       <DependentUpon>202303210049585_mot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304101300018_nam.resx">
+      <DependentUpon>202304101300018_nam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

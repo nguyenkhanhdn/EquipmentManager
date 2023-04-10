@@ -11,9 +11,15 @@ namespace EquipmentManager.Models
         public int Id { get; set; }
         [Display(Name= "Thiết bị")]        
         public int ThietbiId { get; set; }
-        public int Lanbaoduong { get; set; }
+        [Display(Name = "Kế hoạch bảo dưỡng")]
+
+        public DateTime KHBD { get; set; }
+        [Display(Name = "Ngày bảo dưỡng")]
+        public DateTime NgayBD { get; set; }
+        //public int Lanbaoduong { get; set; }
+        [Display(Name = "Mô tả")]
         public string Noidung { get; set; }
-        public DateTime Ngaybaoduong { get; set; }
+        [Display(Name = "Ghi chú")]
         public string Ghichu { get; set; }
         public virtual Thietbi Thietbi { get; set; }
     }

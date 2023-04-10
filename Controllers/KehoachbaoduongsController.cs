@@ -23,6 +23,13 @@ namespace EquipmentManager.Controllers
             return View(kehoachbaoduongs.ToList());
         }
 
+        [AllowAnonymous]
+        public ActionResult Remind()
+        {
+            var kehoachbaoduongs = db.Kehoachbaoduongs.Include(k => k.Thietbi).Where(kh=>kh.NgayBD ==null && kh.KHBD.AddDays(7) > DateTime.Today);
+            return View("Index",kehoachbaoduongs.ToList());
+        }
+
         // GET: Kehoachbaoduongs/Details/5
         public ActionResult Details(int? id)
         {
@@ -50,7 +57,7 @@ namespace EquipmentManager.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ThietbiId,Lanbaoduong,Noidung,Ngaybaoduong,Ghichu")] Kehoachbaoduong kehoachbaoduong)
+        public ActionResult Create([Bind(Include = "Id,ThietbiId,Noidung,KHBD,Ghichu")] Kehoachbaoduong kehoachbaoduong)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +91,7 @@ namespace EquipmentManager.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ThietbiId,Lanbaoduong,Noidung,Ngaybaoduong,Ghichu")] Kehoachbaoduong kehoachbaoduong)
+        public ActionResult Edit([Bind(Include = "Id,ThietbiId,Noidung,KHDB,Ghichu")] Kehoachbaoduong kehoachbaoduong)
         {
             if (ModelState.IsValid)
             {
