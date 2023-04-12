@@ -16,18 +16,27 @@ namespace EquipmentManager.Controllers
         private EquipmentDbContext db = new EquipmentDbContext();
 
         // GET: Kehoachbaoduongs
-        [AllowAnonymous]
+        
         public ActionResult Index()
         {
             var kehoachbaoduongs = db.Kehoachbaoduongs.Include(k => k.Thietbi);
             return View(kehoachbaoduongs.ToList());
         }
 
-        [AllowAnonymous]
+        
         public ActionResult Remind()
         {
-            var kehoachbaoduongs = db.Kehoachbaoduongs.Include(k => k.Thietbi).Where(kh=>kh.NgayBD ==null && kh.KHBD.AddDays(7) > DateTime.Today);
-            return View("Index",kehoachbaoduongs.ToList());
+            //var kehoachbaoduongs = db.Kehoachbaoduongs.Include(k => k.Thietbi).Where(kh=>kh.KHBD.AddDays(7)>= DateTime.Today);
+
+            var query = from k in db.Kehoachbaoduongs
+                        where k.KHBD < DateTime.Now
+                        select k;
+            query = query.Where(k => k.NgayBD == null);
+
+            //var today = DateTime.Today.AddDays(-7);
+            //var khdb = db.Kehoachbaoduongs.Where(p => p.KHBD.AddDays(7) < today).ToList();
+               ///.Where(p => p.StartDate.AddDays(p.Period) > DateTime.Now)
+            return View("Index", query.ToList());
         }
 
         // GET: Kehoachbaoduongs/Details/5
@@ -59,6 +68,7 @@ namespace EquipmentManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,ThietbiId,Noidung,KHBD,Ghichu")] Kehoachbaoduong kehoachbaoduong)
         {
+            kehoachbaoduong.NgayBD = null;
             if (ModelState.IsValid)
             {
                 db.Kehoachbaoduongs.Add(kehoachbaoduong);

@@ -12,10 +12,13 @@ namespace EquipmentManager.Models
         [Display(Name= "Thiết bị")]        
         public int ThietbiId { get; set; }
         [Display(Name = "Kế hoạch bảo dưỡng")]
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
         public DateTime KHBD { get; set; }
         [Display(Name = "Ngày bảo dưỡng")]
-        public DateTime NgayBD { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> NgayBD { get; set; }
         //public int Lanbaoduong { get; set; }
         [Display(Name = "Mô tả")]
         public string Noidung { get; set; }

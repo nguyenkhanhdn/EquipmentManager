@@ -185,6 +185,10 @@
     <Compile Include="Migrations\202304101300018_nam.Designer.cs">
       <DependentUpon>202304101300018_nam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304121405428_nam1.cs" />
+    <Compile Include="Migrations\202304121405428_nam1.Designer.cs">
+      <DependentUpon>202304121405428_nam1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Baoduong.cs" />
     <Compile Include="Models\Kehoachbaoduong.cs" />
@@ -209,6 +213,7 @@
       <DependentUpon>EquipManager.mdf</DependentUpon>
     </Content>
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\equipment.jpg" />
     <Content Include="assets\images\tools.png" />
     <Content Include="assets\img\alarmfire.png" />
     <Content Include="assets\img\apple-touch-icon.png" />
@@ -447,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304101300018_nam.resx">
       <DependentUpon>202304101300018_nam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304121405428_nam1.resx">
+      <DependentUpon>202304121405428_nam1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

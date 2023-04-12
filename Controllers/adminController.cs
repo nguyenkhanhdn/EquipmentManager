@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace EquipmentManager.Controllers
 {
+    
     public class adminController : Controller
     {
         // GET: admin
